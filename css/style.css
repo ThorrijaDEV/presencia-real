@@ -271,6 +271,41 @@ p {
   min-height: 120px;
 }
 
+.form-group--hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.form-status {
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 1rem;
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+  margin-top: var(--sp-md);
+}
+
+.form-status--ok {
+  background: rgba(34, 139, 87, 0.10);
+  border: 1px solid rgba(34, 139, 87, 0.25);
+  color: #227a5a;
+}
+
+.form-status--err {
+  background: rgba(196, 105, 74, 0.08);
+  border: 1px solid rgba(196, 105, 74, 0.25);
+  color: var(--terracotta-text);
+}
+
+.form-status--err a {
+  color: var(--terracotta-text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;

@@ -481,7 +481,11 @@
         </p>
       </div>
 
-      <form action="#" method="POST" class="contact-form reveal">
+      <form
+        action="https://formspree.io/f/mwlkgnee"
+        method="POST"
+        class="contact-form reveal"
+      >
         <div class="form-group">
           <label for="contact-name" class="form-label">Nombre del negocio</label>
           <input
@@ -518,8 +522,27 @@
           ></textarea>
         </div>
 
+        <div class="form-group form-group--hp" aria-hidden="true">
+          <label for="contact-phone">Teléfono (no rellenar)</label>
+          <input
+            id="contact-phone"
+            name="phone"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+            class="form-input"
+          >
+        </div>
+
         <div>
-          <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+          <button type="submit" class="btn btn--primary form-submit-btn">Enviar mensaje</button>
+        </div>
+
+        <div id="form-success" class="form-status form-status--ok" role="status" hidden>
+          <strong>Mensaje enviado.</strong> Te responderemos pronto, sin prisas.
+        </div>
+        <div id="form-error" class="form-status form-status--err" role="alert" hidden>
+          <strong>Algo falló.</strong> Inténtalo de nuevo o escríbenos directamente a <a href="mailto:hola@presenciareal.es">hola@presenciareal.es</a>.
         </div>
       </form>
     </div>

@@ -151,6 +151,48 @@
   });
 
 
+  // --- Formspree Form Submission ---
+  var contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var form = e.target;
+      var btn = form.querySelector('.form-submit-btn');
+      var okEl = document.getElementById('form-success');
+      var errEl = document.getElementById('form-error');
+      var originalText = btn.textContent;
+
+      btn.textContent = 'Enviando…';
+      btn.disabled = true;
+      okEl.hidden = true;
+      errEl.hidden = true;
+
+      var data = new FormData(form);
+      // remove honeypot if present
+      data.delete('phone');
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          okEl.hidden = false;
+          form.reset();
+        } else {
+          errEl.hidden = false;
+        }
+      }).catch(function () {
+        errEl.hidden = false;
+      }).finally(function () {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
+    });
+  }
+
+
   // --- Active Nav Link on Scroll ---
   const sections = document.querySelectorAll('section[id], header[id]');
   const navLinks = document.querySelectorAll('.navbar__link');
