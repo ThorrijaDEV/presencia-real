@@ -13,10 +13,11 @@ Una agencia web con identidad propia, orientada a personas con negocios físicos
 - **HTML5** semántico con `aria` para accesibilidad
 - **CSS3** con variables de diseño, sistema de espaciado/colores y diseño responsive
 - **JavaScript** vanilla: menú móvil, navegación suave, scroll `IntersectionObserver`
+- **Formspree** para el envío del formulario de contacto (sin backend)
 - **Google Fonts** (Poppins)
 - Imágenes externas de Unsplash (placeholder hasta disponer de fotos reales)
 
-Sin frameworks ni dependencias. Estático, listo para cualquier hosting.
+Sin frameworks ni dependencias. Estático, listo para cualquier hosting. El formulario de contacto envía los mensajes al panel de Formspree, así que no necesita servidor propio.
 
 ## Estructura
 
